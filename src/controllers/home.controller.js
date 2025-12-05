@@ -3,7 +3,7 @@ import {Router} from "express";
 const homeController = Router();
 
 homeController.get("/", (req, res) => {
-    res.send("hello");
+    res.json({"hello": "world"});
 });
 
 export default homeController;
