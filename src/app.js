@@ -2,6 +2,7 @@ import express from "express";
 import ROUTER from "./routes/router.js";
 import cors from "cors";
 import { apiKeyAuth } from "./middleware/api.auth.key.js";
+import { logger } from "./middleware/api.access.log.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // Custom global middleware - Logging, request IDs, metrics, etc.
+app.use(logger);
 
 //Authentication / authorization middleware - Protects routes before they reach controllers.
 
