@@ -3,12 +3,12 @@ import ROUTER from "./routes/router.js";
 import cors from "cors";
 import { apiKeyAuth } from "./middleware/api.auth.key.js";
 import { logger } from "./middleware/api.access.log.js";
-import { pool } from "./db/db.js";
+import { pool } from "./config/db_config.js";
 
 const app = express();
 
 // Built-in / third-party middleware
-app.use(express.json());
+app.use(express .json());
 // Browsers will block my APi without this
 // What does it do?
 app.use(cors());
