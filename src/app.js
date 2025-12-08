@@ -3,6 +3,7 @@ import ROUTER from "./routes/router.js";
 import cors from "cors";
 import { apiKeyAuth } from "./middleware/api.auth.key.js";
 import { logger } from "./middleware/api.access.log.js";
+import { pool } from "./db/db.js";
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(logger);
 
 // Route handlers (routers) - Connect your routers to handle requests.
 // Protects ALL routes
-app.use("/", apiKeyAuth, ROUTER);
+app.use("/", ROUTER);
 
 // Error-handling middleware (must come last)
 
