@@ -7,21 +7,21 @@ import { pool } from "./config/db_config.js";
 
 const app = express();
 
-// Built-in / third-party middleware
+// 1. Built-in / third-party middleware
 app.use(express .json());
 // Browsers will block my APi without this
 // What does it do?
 app.use(cors());
 
-// Custom global middleware - Logging, request IDs, metrics, etc.
+// 2. Custom global middleware - Logging, request IDs, metrics, etc.
 app.use(logger);
 
-//Authentication / authorization middleware - Protects routes before they reach controllers.
+// 3. Authentication / authorization middleware - Protects routes before they reach controllers.
 
-// Route handlers (routers) - Connect your routers to handle requests.
+// 4. Route handlers (routers) - Connect your routers to handle requests.
 // Protects ALL routes
 app.use("/", ROUTER);
 
-// Error-handling middleware (must come last)
+// 5. Error-handling middleware (must come last)
 
 export default app;
