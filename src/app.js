@@ -3,7 +3,7 @@ import ROUTER from "./routes/router.js";
 import cors from "cors";
 import { apiKeyAuth } from "./middleware/api.auth.key.js";
 import { logger } from "./middleware/api.access.log.js";
-import { pool } from "./db/db.js";
+import { pool } from "./config/db.config.js";
 
 const app = express();
 
